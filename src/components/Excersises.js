@@ -10,7 +10,7 @@ import SearchExcercises from './SearchExcercises';
 const Excersises = ({ exercises, setExercises, bodyPart }) => {
   // console.log(exercises);
   const [currentPage, setcurrentPage] = useState(1)
-  const excercisesPerPage = 9;
+  const excercisesPerPage = 10;
 
   const indexOfLastExercise = currentPage * excercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - excercisesPerPage;
@@ -22,6 +22,23 @@ const Excersises = ({ exercises, setExercises, bodyPart }) => {
 
     window.scrollTo({ top: 1800, behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let excercisesData = [];
+
+      if (bodyPart === 'all') {
+        excercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      } else {
+        excercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
+      }
+
+      setExercises(excercisesData)
+
+    }
+    fetchExercisesData();
+  }, [bodyPart])
+
 
 
   return (
