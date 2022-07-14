@@ -40,8 +40,9 @@ const Detail = ({ exerciseDetail }) => {
         gap: { lg: '35px', xs: '20px' }
       }}>
         <Typography
-          variant='h2'
-        >{name}</Typography>
+          variant='h2' textTransform='capitalize'>
+          {name}
+        </Typography>
         <Typography variant='h6'>
           Exercises keep you strong and <b>{name}</b> is to target your {target}. It will help you to improve your mood and energy.
         </Typography>
