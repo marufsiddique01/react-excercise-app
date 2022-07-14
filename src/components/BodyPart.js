@@ -16,21 +16,28 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
         borderTop: bodyPart === item ? '4px solid #ff2625' : '',
         backgroundColor: '#fff',
         borderBottomLeftRadius: '20px',
-        width: '270px',
-        height: '280px',
+        width: '250px',
+        height: '250px',
+        cursor: 'pointer',
         gap: '47px'
       }}
+      onclick={() => setBodyPart(item)}
 
     >
       <img
         src={Icon}
-        alt=''
+        alt='gym-category'
         style={{
-          width: '',
-          height: '',
-
+          width: '50px',
+          height: '50px',
         }}
       />
+      <Typography
+        fontSize='24px'
+        fontWeight='bold'
+        color='#3a1212'
+        textTransform='capitalize'
+      >{item}</Typography>
     </Stack >
   )
 }
