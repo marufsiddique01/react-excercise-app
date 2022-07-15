@@ -33,14 +33,16 @@ const Excersises = ({ exercises, setExercises, bodyPart }) => {
         excercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
 
-      setExercises(excercisesData)
+      setExercises(excercisesData);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+
 
     }
     fetchExercisesData();
   }, [bodyPart])
 
   return (
-    <Box id='excercises' sx={{ mt: { lg: '110px' } }} mt='50px' p='20px' >
+    <Box id='excercises' sx={{ mt: { lg: '30px' } }} mb='30px' p='20px' >
       <Typography variant='h3' mb='46px' textAlign='center'>
         Showing Results
       </Typography>
