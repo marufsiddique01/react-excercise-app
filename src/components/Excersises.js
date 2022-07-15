@@ -39,8 +39,6 @@ const Excersises = ({ exercises, setExercises, bodyPart }) => {
     fetchExercisesData();
   }, [bodyPart])
 
-
-
   return (
     <Box id='excercises' sx={{ mt: { lg: '110px' } }} mt='50px' p='20px' >
       <Typography variant='h3' mb='46px' textAlign='center'>
