@@ -5,7 +5,7 @@ import Pagination from '@mui/material/Pagination';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 
 import ExerciseCard from '../components/ExerciseCard';
-import SearchExcercises from './SearchExcercises';
+// import SearchExcercises from './SearchExcercises';
 
 const Excersises = ({ exercises, setExercises, bodyPart }) => {
   // console.log(exercises);
